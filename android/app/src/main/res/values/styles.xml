@@ -5,7 +5,6 @@
         <!-- Customize your theme here. -->
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
         <item name="android:forceDarkAllowed">true</item>
-        <item name = "android: statusBarColor">"#000"</item>
     </style>
 
 </resources>
