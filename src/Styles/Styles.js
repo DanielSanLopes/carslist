@@ -14,7 +14,7 @@ const Styles = StyleSheet.create({
         color: "#FFF"
     },
 
-    touchable: {
+    touchableCar: {
         height: 50,
         width: '100%',
         borderTopWidth: 1,
@@ -34,12 +34,23 @@ const Styles = StyleSheet.create({
         margin:'4%',
         backgroundColor: '#f1f1f1',
         width: '75%',
-        height: 30,
+        height: 40,
         borderColor: "#4f4745",
-        borderWidth: 1,
-        padding:7,
+        borderWidth: 2,
+        padding:12,
         fontSize:12,
-        
+        letterSpacing:1
+    },
+
+    button:{
+        width: 150,
+        height: 60,
+        backgroundColor: '#ffc7d2',
+        borderRadius:180,
+        justifyContent:'center',
+        alignItems:'center',
+        shadowColor:'#000',
+               
 
     }
 

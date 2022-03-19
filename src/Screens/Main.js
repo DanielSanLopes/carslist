@@ -15,6 +15,7 @@ export default function Main({navigation}){
 
 
   const {RequireAllCars} = useContext(GlobalContext)
+  const [car, setCar] = useState([])
     
   RequireAllCars()
 
@@ -27,17 +28,35 @@ export default function Main({navigation}){
         <View  style={Styles.container}>
           <SearchBar></SearchBar>
 
-          <TouchableOpacity>
-            <Text>Ver Todos os carros</Text>
+          
+          <View style={{height:'10%'}}/>
+
+          <TouchableOpacity style={{alignSelf:'center'}}>
+            <View style={[Styles.button, {shadowOffset:{width: 40, height: 40},
+        elevation:40}]}>
+              <Text style={{color: '#4c3c3f', fontSize:20, fontWeight:'bold'}} >Ver Todos</Text>
+            </View>
           </TouchableOpacity>
 
-          <Cars>
+          <Modal animationType='slide' visible={false} transparent={true}>
+            <View style={[Styles.container,{flex:0, height:'69.4%', top:'28.6%', backgroundColor:'white'}]}>
+              <FlatList 
+              contentContainerStyle={{marginVertical: 0}}
+              data={car}
+              keyExtractor={item => String(item.id)}
+              renderItem={({item}) => <Cars car={item}/>}>
+              </FlatList>
+
+            </View>
+          </Modal>
+
+          {/* <Cars>
 
           </Cars>
 
           <Cars>
                   
-          </Cars>
+          </Cars> */}
 
                 
         </View>
@@ -53,16 +72,16 @@ export default function Main({navigation}){
 
 function Cars(props){
 
-  const [name, setName] = useState(props.name)
-  const [brand, setBrand] = useState(props.brand)
-  const [price, setPrice] = useState(props.price)
-  const [age, setAge] = useState(props.age)
+  const [name, setName] = useState(props.car.name)
+  const [brand, setBrand] = useState(props.car.brand)
+  const [price, setPrice] = useState(props.car.price)
+  const [age, setAge] = useState(props.car.age)
 
 
 
   return(
 
-    <TouchableOpacity style={Styles.touchable}>
+    <TouchableOpacity style={Styles.touchableCar}>
       <Text></Text>
 
     </TouchableOpacity>

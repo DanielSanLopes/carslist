@@ -21,8 +21,9 @@ export default function GlobalProvider ({children}){
 
         if (response){
             let res = await response.json()
-            var cars = [...res]
-            console.log ("Result " + cars)
+            
+            res.map(item => console.log({...item}))
+            
         }
 
 
