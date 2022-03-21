@@ -7,7 +7,8 @@ const Styles = StyleSheet.create({
 
     container:{
         flex:1,
-        backgroundColor: "#675b59"
+        backgroundColor: "#675b59",
+        
     },
 
     baseText: {
@@ -28,7 +29,7 @@ const Styles = StyleSheet.create({
         borderColor: '#4f4745',
     },
 
-    textInput:{
+    textSearchInput:{
       
         borderRadius: 90, 
         margin:'4%',
@@ -40,6 +41,20 @@ const Styles = StyleSheet.create({
         padding:12,
         fontSize:12,
         letterSpacing:1
+    },
+
+    textInput:{
+
+        borderRadius: 90,
+        width: '40%',
+        height: 40, 
+        backgroundColor: '#f1f1f1',
+        margin:'2%',
+        marginTop:0,
+        letterSpacing:0.5,
+        fontSize:15,
+        padding: 10
+
     },
 
     button:{

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, Image} from 'react-native';
+import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
 import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
 import {NavigationContainer} from "@react-navigation/native"
 import GlobalProvider, { GlobalContext } from './contexts/GlobalContext';
@@ -13,17 +13,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator()
 
 const App = () => {
-  
-  
-       
-
-
-
-
-
-
-
-
 
 
   return (
