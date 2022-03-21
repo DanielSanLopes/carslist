@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from "react";
-import {FlatList, SafeAreaView, Text, View, Image, TouchableOpacity, Modal, ImageBackground, TextInput, ActivityIndicator, LogBox,
+import {FlatList, SafeAreaView, Text, View, Image, TouchableOpacity, Modal, ImageBackground, TextInput, ActivityIndicator,
 ScrollView, KeyboardAvoidingView, Linking} from 'react-native';
 import { Colors, Header } from "react-native/Libraries/NewAppScreen";
 import Styles from "../Styles/Styles";
@@ -23,8 +23,6 @@ export default function Main({navigation}){
   
   const [search, setSearch] = useState("")
 
-  var focoused = useIsFocused()
-
  
   function callSearch(){
     Search(search)
@@ -40,9 +38,6 @@ export default function Main({navigation}){
             
         <View  style={Styles.container}>
           <SearchBar value={search} onChangeText={text => setSearch(text)} onPress={()=>callSearch()} ></SearchBar>
-
-          
-          {/* <View style={{height:'15%'}}/> */}
          
           
           {loading? <ActivityIndicator size={'large'} color='#ffc7d2'/>:
@@ -64,16 +59,14 @@ export default function Main({navigation}){
           <Modal animationType='slide' visible={loaded} transparent={true} onRequestClose={()=>setLoaded(false)}>
             <View style={[Styles.container,{flex:0, height:'72%', top:'28.6%', backgroundColor:'#675b59'}]}>
 
-            <Text style={[Styles.baseText, {letterSpacing: 3, margin: "2.5%"}]}> Título    :   Marca     :  Preço     :   Ano </Text>
+            <Text style={[Styles.baseText, {letterSpacing: 3, margin: "2.5%", width:'100%', height:30, maxHeight:30}]}> Título   :   Marca    :  Preço    :  Ano </Text>
+              
               <FlatList 
-
               contentContainerStyle={{marginVertical: 0}}
               data={cars}
               keyExtractor={item => String(item._id)}
               renderItem={({item}) => <Cars car={item}/>}>
               </FlatList>
-
-              
 
             </View>
           </Modal>
@@ -129,36 +122,17 @@ export default function Main({navigation}){
             
               </KeyboardAvoidingView>
               </ScrollView>
-           
-                      
-
             </View>
           </Modal>
-          
-
-         
-
-          {/* <Cars>
-
-          </Cars>
-
-          <Cars>
-                  
-          </Cars> */}
-
-                
         </View>
     </SafeAreaView>
      )
 }
 
-// import React, {useContext, useState, useEffect} from "react";
-// import {FlatList, SafeAreaView, Text, View, Image, TouchableOpacity, Modal, ImageBackground, TextInput, ActivityIndicator, LogBox,
-// ScrollView, KeyboardAvoidingView, Linking} from 'react-native';
-// import { Colors, Header } from "react-native/Libraries/NewAppScreen";
-// import Styles from "../Styles/Styles";
-// import { GlobalContext } from "../contexts/GlobalContext";
-// import { useIsFocused } from "@react-navigation/native";
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 function Cars(props){
@@ -209,6 +183,7 @@ function Cars(props){
       setConfirm(false)}}>
         <View style={[Styles.container,{justifyContent:'center', alignItems:'center'}]}>
 
+        {/* Excluir carro */}
         {confirm?
         <View style={{justifyContent:'center', alignItems:'center'}}>  
           <Text style={{color: 'white', fontSize:20, fontWeight:'bold'}} >Tem certeza?</Text>
@@ -237,6 +212,7 @@ function Cars(props){
           </View>
         </TouchableOpacity>
 
+        {/* Alterar carro */}
         <Modal animationType='slide' visible={altModal} transparent={true} 
         onRequestClose={()=>{
           setAltModal(false)
@@ -275,9 +251,6 @@ function Cars(props){
                 </TouchableOpacity>   }           
               </KeyboardAvoidingView>
             </ScrollView>
-           
-                      
-
             </View>
         </Modal>
 
