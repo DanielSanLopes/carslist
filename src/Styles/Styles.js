@@ -32,15 +32,17 @@ const Styles = StyleSheet.create({
     textSearchInput:{
       
         borderRadius: 90, 
-        margin:'4%',
+        margin:'1%',
+        marginTop:'4%',
         backgroundColor: '#f1f1f1',
-        width: '75%',
-        height: 40,
+        width: '85%',
+        height: 45,
         borderColor: "#4f4745",
         borderWidth: 2,
-        padding:12,
-        fontSize:12,
-        letterSpacing:1
+        padding:11,
+        paddingStart:15,
+        fontSize:13,
+        letterSpacing:0.7
     },
 
     textInput:{

@@ -59,7 +59,7 @@ export default function Main({navigation}){
           <Modal animationType='slide' visible={loaded} transparent={true} onRequestClose={()=>setLoaded(false)}>
             <View style={[Styles.container,{flex:0, height:'72%', top:'28.6%', backgroundColor:'#675b59'}]}>
 
-            <Text style={[Styles.baseText, {letterSpacing: 3, margin: "2.5%", width:'100%', height:30, maxHeight:30}]}> Título   :   Marca    :  Preço    :  Ano </Text>
+            <Text style={[Styles.baseText, {letterSpacing: 3, margin: "2.5%", width:'100%', height:30, maxHeight:30}]}> Título  :   Marca   :  Preço   :  Ano </Text>
               
               <FlatList 
               contentContainerStyle={{marginVertical: 0}}
@@ -284,7 +284,7 @@ function SearchBar(props){
       <TextInput value={props.value} onChangeText={props.onChangeText} style={Styles.textSearchInput} 
       placeholderTextColor={'#8e8e8e'} placeholder={"Digite o nome, marca, preço ou ano do carro"}/>
       <TouchableOpacity onPress={props.onPress}>
-        <Image source = {require("../Assets/Images/searchIcon.png")} resizeMode={'contain'} style={{width:40}}/>
+        <Image source = {require("../Assets/Images/searchIcon.png")} resizeMode={'contain'} style={{width:40, marginTop:'30%', marginEnd:'1%'}}/>
       </TouchableOpacity>
       
     </View>
